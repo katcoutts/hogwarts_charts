@@ -1,8 +1,3 @@
-// houses are:
-// Gryffindor 
-// Slytherin 
-// Ravenclaw
-// Hufflepuff
 var gryffindor = [];
 var slytherin = [];
 var ravenclaw = [];
@@ -11,7 +6,7 @@ var houses = ['Gryffindor', 'Slytherin', 'Ravenclaw', 'Hufflepuff'];
 var numbers = [];
 var maleStudents = [];
 var femaleStudents = [];
-var genderNumbers = [];
+
 
 var requestComplete = function(){
   if(this.status !== 200) return;
@@ -40,18 +35,11 @@ var requestComplete = function(){
       femaleStudents.push(character);
     }    
   } 
-  console.log(slytherin.length);
-  console.log(gryffindor.length);
-  console.log(ravenclaw.length);
-  console.log(hufflepuff.length);
   numbers.push(slytherin.length);
   numbers.push(gryffindor.length);
   numbers.push(ravenclaw.length);
   numbers.push(hufflepuff.length);
-  console.log(numbers);
   makeChart();
-  genderNumbers.push(maleStudents.length);
-  genderNumbers.push(femaleStudents.length);
   makePieChart();
 }
 
@@ -66,7 +54,6 @@ var makePieChart = function(){
 
 
 var makeRequest = function(url, callback){
-
   var request = new XMLHttpRequest();
   request.open("GET", url);
   request.onload = callback;
